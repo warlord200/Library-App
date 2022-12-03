@@ -21,6 +21,8 @@ function addBookToLibrary(title, author, page, remarks) {
   myLibrary.push(new book(title, author, page, remarks));
 }
 
+// function that updates the library //
+
 function updateLibrary() {
   const bookList = document.querySelector("#book-list");
   const card = document.createElement("div");
@@ -34,18 +36,21 @@ function updateLibrary() {
   cardPage.classList.add("card-page");
   const cardRemarks = document.createElement("div");
   cardRemarks.classList.add("card-remarks");
-  const cardDelete = document.createElement("div");
+  const cardDelete = document.createElement("button");
   cardDelete.classList.add("card-delete");
   cardDelete.innerHTML = "Delete";
   cardTitle.textContent = title.value;
   cardAuthor.textContent = author.value;
   cardPage.textContent = page.value;
-  cardRemarks.textContent = remarks.value;
+  cardRemarks.textContent = `"${remarks.value}"`;
   card.appendChild(cardTitle);
   card.appendChild(cardAuthor);
   card.appendChild(cardPage);
   card.appendChild(cardRemarks);
   card.appendChild(cardDelete);
+  cardDelete.addEventListener("click", (e) => {
+    card.remove();
+  });
 }
 
 submit.addEventListener(

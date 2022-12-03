@@ -1,5 +1,7 @@
 * {
   border: 1px solid red;
+  font-family: "inter", sans-serif;
+  font-weight: 500;
 }
 
 body {
@@ -26,6 +28,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: left;
+  align-content: center;
   grid-row: 2/3;
   grid-column: 1 / 2;
 }
@@ -35,14 +38,28 @@ form {
   grid-column: 2 / 3;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
   overflow: scroll;
+  padding: 10px;
 }
 
 .card {
   margin: 0;
-  padding: 0;
+  padding: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.card-title {
+  font-size: 40px;
+}
+
+.card-remarks {
+  font-size: 20px;
+  font-weight: 100;
 }
