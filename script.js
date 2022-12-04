@@ -68,6 +68,13 @@ function updateLibrary() {
   });
 }
 
+function clearForm() {
+  title.value = "";
+  author.value = "";
+  page.value = "";
+  remarks.value = "";
+}
+
 submit.addEventListener(
   "click",
   (e) => {
@@ -86,6 +93,7 @@ submit.addEventListener(
     addBookToLibrary(title.value, author.value, page.value, remarks.value);
     console.log(myLibrary);
     updateLibrary();
+    clearForm();
   },
   false
 );
