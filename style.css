@@ -62,7 +62,16 @@ form input {
   border-radius: 10px;
   font-weight: 300;
 }
-
+#submit {
+  background-color: var(--shamrock-800);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
 #book-list {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
@@ -83,7 +92,7 @@ form input {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   font-size: 20px;
   font-weight: 300;
   background-color: var(--shamrock-100);
@@ -91,14 +100,34 @@ form input {
   border: #175033 solid 1px;
 }
 
+.card:hover {
+  background-color: var(--shamrock-50);
+}
+
 .card-title {
   font-size: 20px;
   font-weight: 800;
 }
 
+.card-author {
+  font-size: 15px;
+  font-weight: 500;
+}
+
 .card-remarks {
   font-size: 20px;
   font-weight: 100;
+}
+
+.card-delete {
+  background-color: var(--shamrock-800);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 /* credit deerbucks design for button */

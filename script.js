@@ -43,7 +43,7 @@ function updateLibrary() {
   cardStatus.classList.add("read");
   cardTitle.textContent = title.value;
   cardAuthor.textContent = author.value;
-  cardPage.textContent = page.value;
+  cardPage.textContent = `${page.value} pages`;
   cardRemarks.textContent = `"${remarks.value}"`;
   cardStatus.textContent = "Read";
   card.appendChild(cardTitle);
