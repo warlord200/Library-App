@@ -39,17 +39,32 @@ function updateLibrary() {
   const cardDelete = document.createElement("button");
   cardDelete.classList.add("card-delete");
   cardDelete.innerHTML = "Delete";
+  const cardStatus = document.createElement("button");
+  cardStatus.classList.add("read");
   cardTitle.textContent = title.value;
   cardAuthor.textContent = author.value;
   cardPage.textContent = page.value;
   cardRemarks.textContent = `"${remarks.value}"`;
+  cardStatus.textContent = "Read";
   card.appendChild(cardTitle);
   card.appendChild(cardAuthor);
   card.appendChild(cardPage);
-  card.appendChild(cardRemarks);
+  if (remarks.value != "") {
+    card.appendChild(cardRemarks);
+  }
   card.appendChild(cardDelete);
+  card.appendChild(cardStatus);
   cardDelete.addEventListener("click", (e) => {
     card.remove();
+  });
+  cardStatus.addEventListener("click", (e) => {
+    if (cardStatus.textContent === "Read") {
+      cardStatus.textContent = "Not Read";
+      cardStatus.classList.add("unread");
+    } else {
+      cardStatus.textContent = "Read";
+      cardStatus.classList.remove("unread");
+    }
   });
 }
 
@@ -65,7 +80,7 @@ submit.addEventListener(
       title.value === "" ||
       author.value === "" ||
       page.value === "" ||
-      remarks.value === ""
+      page.value > 99999999999
     )
       return;
     addBookToLibrary(title.value, author.value, page.value, remarks.value);
