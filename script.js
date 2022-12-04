@@ -93,7 +93,7 @@ submit.addEventListener(
     addBookToLibrary(title.value, author.value, page.value, remarks.value);
     console.log(myLibrary);
     updateLibrary();
-    clearForm();
+    // clearForm();
   },
   false
 );
